@@ -1,0 +1,11 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:if condition="{items -> f:count()}">
+    <ul class="nav navbar-nav navbar-right">
+        <f:for each="{items}" as="item">
+            <li>
+                <neos:link.node node="{item.node}" />
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+
