@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
 <html lang="en">
 <head>
 
@@ -69,10 +70,10 @@
         </div>
         <!-- /.container -->
     </nav>
-
+    
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url({f:uri.resource(path: 'Images/home-bg.jpg', package: 'JanScholz.CleanBlog')})">
+    <header class="intro-header" style="background-image: url({f:if(condition: '{nodeHeaderImage}', then: '{nodeHeaderImage}', else: '{siteHeaderImage}')})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -86,9 +87,6 @@
         </div>
     </header>
 
-    <nav class="breadcrumb">
-        {parts.breadcrumb -> f:format.raw()}
-    </nav>
     <!-- Main Content -->
     <div class="container">
         <div class="row">
@@ -186,6 +184,7 @@
             </div>
         </div>
     </footer>
+
 
     <f:section name="bodyScripts">
         <!-- jQuery -->

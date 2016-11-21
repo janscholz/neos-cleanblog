@@ -8,12 +8,7 @@
     "suggest": {
         "typo3/neos-seo": "*"
     },
-    "name": "janscholz/cleanblog",
-    "autoload": {
-        "psr-0": {
-            "JanScholz\\CleanBlog": "Classes/"
-        }
-    },
+    "name": "janscholz/neos-cleanblog",
     "extra": {
         "neos": {
             "package-key": "JanScholz.CleanBlog"

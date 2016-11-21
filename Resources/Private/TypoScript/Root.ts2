@@ -9,7 +9,7 @@ page = Page {
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://JanScholz.Default/Private/Templates/Page/Default.html'
+			templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
 	}
@@ -23,6 +23,15 @@ page = Page {
 			}
 			breadcrumb = Breadcrumb
 		}
+
+		nodeHeaderImage = TYPO3.Neos:ImageUri {
+			asset = ${q(node).property('headerImage')}
+		}
+
+		siteHeaderImage = TYPO3.Neos:ImageUri {
+			asset = ${q(site).property('headerImage')}
+		}
+
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
 			// The default content section
@@ -36,4 +45,7 @@ page = Page {
 			sectionName = 'bodyScripts'
 		}
 	}
+
+
+
 }
