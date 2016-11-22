@@ -1,6 +1,7 @@
 /**
  * Root TypoScript template for the Clean Blog site
  */
+
 page = Page {
 	head {
 		stylesheets.site = TYPO3.TypoScript:Template {
@@ -24,12 +25,19 @@ page = Page {
 			breadcrumb = Breadcrumb
 		}
 
-		nodeHeaderImage = TYPO3.Neos:ImageUri {
-			asset = ${q(node).property('headerImage')}
-		}
+		pageHeader {
+			nodeHeaderImage = TYPO3.Neos:ImageUri {
+				asset = ${q(node).property('headerImage')}
+			}
 
-		siteHeaderImage = TYPO3.Neos:ImageUri {
-			asset = ${q(site).property('headerImage')}
+			siteHeaderImage = TYPO3.Neos:ImageUri {
+				asset = ${q(site).property('headerImage')}
+			}
+
+			headline = ${q(node).property('headline')}
+			subheadline = ${q(node).property('subheadline')}
+
+			type = ${q(node).filter('[instanceof JanScholz.CleanBlog:BlogPost]').count() >= 1 ? 'BlogPost' : 'Page'}
 		}
 
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
@@ -45,7 +53,4 @@ page = Page {
 			sectionName = 'bodyScripts'
 		}
 	}
-
-
-
 }

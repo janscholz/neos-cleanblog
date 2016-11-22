@@ -9,6 +9,18 @@
           label: 'Page Header'
           position: 900
   properties:
+    headline:
+      type: string
+      defaultValue: 'Replace by your headline value ...'
+      ui:
+        label: 'Headline'
+        inlineEditable: TRUE
+    subheadline:
+      type: string
+      defaultValue: 'Replace by your subheadline value ...'
+      ui:
+        label: 'Subheadline'
+        inlineEditable: TRUE
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -16,3 +28,13 @@
         reloadPageIfChanged: TRUE
         inspector:
           group: 'header'
+
+
+'JanScholz.CleanBlog:BlogPost':
+  ui:
+    label: 'Blog Post'
+    icon: 'icon-file'
+    help:
+      message: 'The Blog Post type ist for single blog entries.'
+  superTypes:
+      'TYPO3.Neos.NodeTypes:Page': TRUE
