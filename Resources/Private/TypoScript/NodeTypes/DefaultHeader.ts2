@@ -1,0 +1,15 @@
+
+prototype(JanScholz.CleanBlog:DefaultHeader) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/DefaultHeader.html'
+
+    headline = ${q(node).property('headline')}
+    subheadline = ${q(node).property('subheadline')}
+
+    nodeHeaderImage = TYPO3.Neos:ImageUri {
+        asset = ${q(node).property('headerImage')}
+    }
+
+    siteHeaderImage = TYPO3.Neos:ImageUri {
+        asset = ${q(site).property('headerImage')}
+    }
+}

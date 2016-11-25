@@ -30,6 +30,8 @@
           group: 'header'
 
 
+# http://neos.readthedocs.io/en/stable/HowTos/SelectingPageTemplate.html#using-a-defaultpage-prototype
+# https://discuss.neos.io/t/document-node-type-best-practices/242
 'JanScholz.CleanBlog:BlogPost':
   ui:
     label: 'Blog Post'
