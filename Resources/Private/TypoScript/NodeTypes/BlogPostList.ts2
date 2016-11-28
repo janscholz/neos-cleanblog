@@ -1,0 +1,4 @@
+prototype(JanScholz.CleanBlog:BlogPostList) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/BlogPostList.html'
+    items = ${q(site).children('[instanceof TYPO3.Neos.NodeTypes:Page]').children('[instanceof JanScholz.CleanBlog:BlogPost]')}
+}

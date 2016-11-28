@@ -41,6 +41,8 @@ prototype(JanScholz.CleanBlog:DefaultPage) < prototype(Page) {
 			templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
 		}
+
+		blogPostList = JanScholz.CleanBlog:BlogPostList
 	}
 }
 

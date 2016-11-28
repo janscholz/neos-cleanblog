@@ -1,4 +1,5 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace site=JanScholz\CleanBlog\ViewHelpers}
 <header class="intro-header" style="background-image: url('{f:if(condition: '{nodeHeaderImage}', then: '{nodeHeaderImage}', else: '{siteHeaderImage}')}')">
     <div class="container">
         <div class="row">
@@ -7,8 +8,8 @@
                     <neos:contentElement.wrap node="{node}">
                         {neos:contentElement.editable(property: 'headline', tag: 'h1')}
                         {neos:contentElement.editable(property: 'subheadline', tag: 'h2', class: 'subheading')}
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
                     </neos:contentElement.wrap>
+                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on {site:date(date: creationDate)}</span>
                 </div>
             </div>
         </div>
