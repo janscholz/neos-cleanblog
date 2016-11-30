@@ -1,5 +1,10 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace site=JanScholz\CleanBlog\ViewHelpers}
 <f:for each="{items}" as="item">
+    <f:render section="teaser" arguments="{item: item}" />
+</f:for>
+
+<f:section name="teaser">
     <div class="post-preview">
         <neos:link.node node="{item}">
             <h2 class="post-title">
@@ -10,7 +15,7 @@
             </h3>
             </a>
         </neos:link.node>
-        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+        {site:blogPostMeta(node: item, tag: 'p', class: 'post-meta') -> f:format.raw()}
     </div>
     <hr>
-</f:for>
+</f:section>

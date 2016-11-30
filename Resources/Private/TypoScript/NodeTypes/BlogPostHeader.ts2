@@ -1,6 +1,5 @@
 
 prototype(JanScholz.CleanBlog:BlogPostHeader) < prototype(JanScholz.CleanBlog:DefaultHeader) {
     templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/BlogPostHeader.html'
-
-    creationDate = ${q(node).property('_creationDateTime')}
+    node = ${node}
 }
