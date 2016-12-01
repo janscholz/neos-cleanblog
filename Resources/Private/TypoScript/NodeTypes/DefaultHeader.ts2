@@ -4,14 +4,5 @@ prototype(JanScholz.CleanBlog:DefaultHeader) < prototype(TYPO3.TypoScript:Templa
 
     headline = ${q(node).property('headline')}
     subheadline = ${q(node).property('subheadline')}
-
-    nodeHeaderImage = TYPO3.Neos:ImageUri {
-        asset = ${q(node).property('headerImage')}
-    }
-
-    siteHeaderImage = TYPO3.Neos:ImageUri {
-        asset = ${q(site).property('headerImage')}
-    }
-
     node = ${node}
 }
