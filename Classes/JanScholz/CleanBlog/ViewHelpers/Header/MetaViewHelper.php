@@ -1,15 +1,40 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jan.scholz
- * Date: 25.11.16
- * Time: 20:29
+namespace JanScholz\CleanBlog\ViewHelpers\Header;
+/*
+ * This file is part of the JanScholz.CleanBlog package.
+ *
+ * This package is Open Source Software. For the full copyright and license
+ * information, please view the LICENSE file which was distributed with this
+ * source code.
  */
 
-namespace JanScholz\CleanBlog\ViewHelpers\Header;
-
 use TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
+/**
+ * Renders the meta subheadline of the blog post and blog list item of a given TYPO3.TYPO3CR.Domain.Model node instance
+ *
+ * = Examples =
+ *
+ * <code title="Rendering the meta subheadline">
+ * {janscholz.cleanblog:header.meta(node: nodeObject)}
+ * </code>
+ * <output>
+ * (depending on the node)
+ * <span class="meta">Posted by <a href="#">Start Bootstrap</a> on November 26, 2016</span>
+ * </output>
+ *
+ * <code title="Rendering the meta subheadline with tag and/or css class">
+ * {janscholz.cleanblog:header.meta(node: nodeObject, tag: 'p', class: 'post-meta')}
+ * </code>
+ * <output>
+ * (depending on the node)
+ * <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on November 26, 2016</p>
+ * </output>
+ *
+ *
+ * @see \JanScholz\CleanBlog\ViewHelpers\Header\MetaViewHelper
+ */
 class MetaViewHelper extends AbstractTagBasedViewHelper
 {
     private $monthMapping = array(1 => 'January', 2 => 'February', 3 => 'March',
@@ -22,7 +47,7 @@ class MetaViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('tag', 'string', 'Tag for to render for meta data');
     }
 
-    public function render($node)
+    public function render(NodeInterface $node)
     {
         $date = $node->getCreationDateTime();
         $month = $this->monthMapping[intval($date->format('m'))];
