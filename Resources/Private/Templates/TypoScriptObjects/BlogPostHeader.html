@@ -1,6 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
 {namespace site=JanScholz\CleanBlog\ViewHelpers}
-<header class="intro-header" style="background-image: url('{f:if(condition: '{nodeHeaderImage}', then: '{nodeHeaderImage}', else: '{siteHeaderImage}')}')">
+<header class="intro-header" style="background-image: url('{site:header.image(node: node)}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -9,7 +10,7 @@
                         {neos:contentElement.editable(property: 'headline', tag: 'h1')}
                         {neos:contentElement.editable(property: 'subheadline', tag: 'h2', class: 'subheading')}
                     </neos:contentElement.wrap>
-                    {site:blogPostMeta(node: node) -> f:format.raw()}
+                    {site:header.meta(node: node) -> f:format.raw()}
                 </div>
             </div>
         </div>

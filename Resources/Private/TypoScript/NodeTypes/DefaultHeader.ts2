@@ -12,4 +12,6 @@ prototype(JanScholz.CleanBlog:DefaultHeader) < prototype(TYPO3.TypoScript:Templa
     siteHeaderImage = TYPO3.Neos:ImageUri {
         asset = ${q(site).property('headerImage')}
     }
+
+    node = ${node}
 }
