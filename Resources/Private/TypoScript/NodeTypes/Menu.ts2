@@ -1,0 +1,3 @@
+prototype(JanScholz.CleanBlog:Menu) < prototype(Menu) {
+    templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/Menu.html'
+}

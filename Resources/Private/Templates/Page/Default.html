@@ -73,14 +73,14 @@
     </nav>
 
     <!-- Page Header -->
-    {pageHeader -> f:format.raw()}
+    {parts.header -> f:format.raw()}
 
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-                <ts:render path="blogPostList" />
+                {parts.blogPostList -> f:format.raw()}
 
                 <!-- Pager -->
                 <ul class="pager">
@@ -95,7 +95,7 @@
     <hr>
 
     <!-- Footer -->
-    <f:render partial="Footer" />
+    {parts.footer -> f:format.raw()}
 
     <f:section name="bodyScripts">
         <!-- jQuery -->

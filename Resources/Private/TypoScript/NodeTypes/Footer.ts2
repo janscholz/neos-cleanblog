@@ -1,0 +1,3 @@
+prototype(JanScholz.CleanBlog:Footer) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/Footer.html'
+}

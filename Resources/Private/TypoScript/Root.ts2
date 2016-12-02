@@ -22,14 +22,12 @@ prototype(JanScholz.CleanBlog:DefaultPage) < prototype(Page) {
 		sectionName = 'body'
 
 		parts {
-			menu = Menu {
-				templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/TypoScriptObjects/MainMenu.html'
-			}
-
+			menu = JanScholz.CleanBlog:Menu
+			header = JanScholz.CleanBlog:DefaultHeader
 			breadcrumb = Breadcrumb
+			footer = JanScholz.CleanBlog:Footer
+			blogPostList = JanScholz.CleanBlog:BlogPostList
 		}
-
-		pageHeader = JanScholz.CleanBlog:DefaultHeader
 
 		content {
 			main = PrimaryContent {
@@ -41,8 +39,6 @@ prototype(JanScholz.CleanBlog:DefaultPage) < prototype(Page) {
 			templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
 		}
-
-		blogPostList = JanScholz.CleanBlog:BlogPostList
 	}
 }
 
@@ -52,7 +48,9 @@ prototype(TYPO3.Neos.NodeTypes:Page.Document) < prototype(JanScholz.CleanBlog:De
 
 prototype(JanScholz.CleanBlog:BlogPost.Document) < prototype(JanScholz.CleanBlog:DefaultPage) {
 	body {
-		pageHeader = JanScholz.CleanBlog:BlogPostHeader
+		parts {
+			header = JanScholz.CleanBlog:BlogPostHeader
+		}
 	}
 }
 
