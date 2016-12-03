@@ -29,9 +29,6 @@
         inspector:
           group: 'header'
 
-
-# http://neos.readthedocs.io/en/stable/HowTos/SelectingPageTemplate.html#using-a-defaultpage-prototype
-# https://discuss.neos.io/t/document-node-type-best-practices/242
 'JanScholz.CleanBlog:BlogPost':
   ui:
     label: 'Blog Post'
@@ -40,3 +37,11 @@
       message: 'The Blog Post type ist for single blog entries.'
   superTypes:
       'TYPO3.Neos.NodeTypes:Page': TRUE
+
+'JanScholz.CleanBlog:BlogPostList':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Blog Post List'
+    group: 'general'
+    icon: 'icon-list'

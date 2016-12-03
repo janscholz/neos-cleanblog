@@ -1,8 +1,17 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace site=JanScholz\CleanBlog\ViewHelpers}
-<f:for each="{items}" as="item">
-    <f:render section="teaser" arguments="{item: item}" />
-</f:for>
+<f:section name="list">
+    <f:for each="{items}" as="item">
+        <f:render section="teaser" arguments="{item: item}" />
+    </f:for>
+
+    <!-- Pager -->
+    <ul class="pager">
+        <li class="next">
+            <a href="#">Older Posts &rarr;</a>
+        </li>
+    </ul>
+</f:section>
 
 <f:section name="teaser">
     <div class="post-preview">

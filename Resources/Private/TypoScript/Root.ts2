@@ -26,7 +26,6 @@ prototype(JanScholz.CleanBlog:DefaultPage) < prototype(Page) {
 			header = JanScholz.CleanBlog:DefaultHeader
 			breadcrumb = Breadcrumb
 			footer = JanScholz.CleanBlog:Footer
-			blogPostList = JanScholz.CleanBlog:BlogPostList
 		}
 
 		content {
