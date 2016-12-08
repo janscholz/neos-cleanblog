@@ -1,0 +1,32 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<figure>
+    <f:if condition="{image}">
+        <f:then>
+            <f:if condition="{link}">
+                <f:then>
+                    <a href="{link}">
+                        <media:image image="{image}" alt="{alternativeText}" title="{title}" class="img-responsive" />
+                    </a>
+                </f:then>
+                <f:else>
+                    <media:image image="{image}" alt="{alternativeText}" title="{title}" class="img-responsive" />
+                </f:else>
+            </f:if>
+
+        </f:then>
+        <f:else>
+            <f:if condition="{neos:rendering.inEditMode()}">
+                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image"
+                     alt="Dummy image" class="neos-handle img-responsive" />
+            </f:if>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{hasCaption}">
+        <figcaption>
+            {neos:contentElement.editable(property: 'caption', tag: 'span', class: 'caption text-muted')}
+        </figcaption>
+    </f:if>
+
+</figure>

@@ -2,6 +2,12 @@
 # to your pages. You can add as many areas as you like, still only those that are rendered in your TypoScript and
 # Template are visible on your page.
 'TYPO3.Neos.NodeTypes:Page':
+  childNodes:
+    'main':
+      constraints:
+        nodeTypes:
+          'TYPO3.Neos.NodeTypes:Image': FALSE
+          'JanScholz.CleanBlog:Image': TRUE
   ui:
     inspector:
       groups:
@@ -34,7 +40,7 @@
     label: 'Blog Post'
     icon: 'icon-file'
     help:
-      message: 'The Blog Post type ist for single blog entries.'
+      message: 'The Blog Post type is for single blog entries.'
   superTypes:
       'TYPO3.Neos.NodeTypes:Page': TRUE
 
@@ -45,3 +51,14 @@
     label: 'Blog Post List'
     group: 'general'
     icon: 'icon-list'
+
+
+'JanScholz.CleanBlog:Image':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Image': TRUE
+    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
+  properties:
+    caption:
+      ui:
+        aloha:
+          autoparagraph: FALSE
