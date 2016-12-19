@@ -13,5 +13,10 @@
         "neos": {
             "package-key": "JanScholz.CleanBlog"
         }
+    },
+    "autoload": {
+        "psr-0": {
+            "JanScholz\\CleanBlog": "Classes"
+        }
     }
 }
