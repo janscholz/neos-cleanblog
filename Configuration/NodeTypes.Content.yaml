@@ -1,0 +1,17 @@
+'JanScholz.CleanBlog:BlogPostList':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Bloglist'
+    group: 'general'
+    icon: 'icon-list'
+
+
+'TYPO3.Neos.NodeTypes:Image':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
+  properties:
+    caption:
+      ui:
+        aloha:
+          autoparagraph: FALSE
