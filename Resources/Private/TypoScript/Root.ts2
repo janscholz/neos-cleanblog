@@ -15,6 +15,20 @@ prototype(JanScholz.CleanBlog:DefaultPage) < prototype(Page) {
 			templatePath = 'resource://JanScholz.CleanBlog/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
+
+		titleTag {
+			content = ${(q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title'))
+					+ ' | ' + site.context.currentSite.name}
+		}
+
+		metaDescriptionTag = TYPO3.TypoScript:Tag {
+			tagName = 'meta'
+			attributes {
+				name = 'description'
+				content = ${q(node).property('metaDescription') ? q(node).property('metaDescription') : q(node).property('subheadline')}
+			}
+			@if.isNotBlank = true
+		}
 	}
 
 	body {
